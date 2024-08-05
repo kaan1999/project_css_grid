@@ -31,20 +31,22 @@ html, body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 40px auto 40px;
+    grid-template-areas: 
+        "h h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "f f f f f f f f f f f f";
     margin: 0;
 }
 
 .container > .header{
-    grid-column-start: 2;
-    grid-column-end: -1;
+    grid-area: h;
 }
 .container > .footer{
-    grid-column: 1 / -1;
+    grid-area: f;
 }
 .container > .content{
-    grid-column: 2 / -1;
+    grid-area: c;
 }
 .container > .menu{
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-area: m;
 }
