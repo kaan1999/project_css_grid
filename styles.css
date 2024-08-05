@@ -1,6 +1,7 @@
 html, body{
     height: 100%;
-    margin: 0;
+    margin: 0px;
+    background-color: rgb(255, 238, 238);
 }
 
 .container > div{
@@ -29,22 +30,21 @@ html, body{
 .container{
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 40px auto 40px;
-    margin: 0;
+    grid-template-columns: [main-start] 1fr [content-start] 5fr [content-end main-end];
+    grid-template-rows: [main-start] 40px [menu-start content-start] auto [menu-end content-end footer-start] 40px [main-end footer-end];
+    gap: 5px;
+    margin: 3px;
 }
 
 .container > .header{
-    grid-column-start: 2;
-    grid-column-end: -1;
+    grid-column: main-start / main-end;
 }
 .container > .footer{
-    grid-column: 1 / -1;
+    grid-column: main-start / content-end;
 }
 .container > .content{
-    grid-column: 2 / -1;
+    grid-column: content-start / content-end;
 }
 .container > .menu{
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row: menu-start / menu-end;
 }
